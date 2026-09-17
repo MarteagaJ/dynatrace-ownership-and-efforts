@@ -1,0 +1,46 @@
+# DT APP files
+.dt-app/*
+!/.dt-app/deployment.json
+
+# Compiled output
+/dist
+/build
+/tmp
+
+# Deployment artifact
+/out
+
+# Dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+*.iml
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.history/
+
+# IDE - VSCode
+/.vscode/*
+!/.vscode/settings.json
+!/.vscode/tasks.json
+!/.vscode/launch.json
+!/.vscode/extensions.json
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# app-settings plugin local files
+/settings/local-mock-data/secrets.json
+/settings/local-mock-data/persistence/
+
+# Un-ignore this app's own source lib/ directory. The repo root .gitignore has a broad,
+# unanchored "lib/" rule intended for Python build output (venv/lib, build/lib, ...) that
+# unintentionally also matches this app's TS source directory at any depth.
+!/ui/app/lib/
+!/ui/app/lib/**

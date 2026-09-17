@@ -1,0 +1,56 @@
+{
+  "$schema": "./.dt-app/app.config.schema.json",
+  "environmentUrl": "https://guu84124.apps.dynatrace.com/",
+  "app": {
+    "name": "ownership-and-efforts",
+    "version": "0.0.0",
+    "description": "Team ownership mapping and reliability effort tracking based on Davis problems",
+    "id": "my.ownership.and.efforts",
+    "scopes": [
+      {
+        "name": "storage:buckets:read",
+        "comment": "Grail bucket metadata/definitions access, required alongside table-specific read scopes (e.g. storage:events:read) or queries return empty with a 'No bucket permissions' warning"
+      },
+      {
+        "name": "storage:smartscape:read",
+        "comment": "Read HOST/SERVICE/K8S_DEPLOYMENT/FRONTEND Smartscape nodes for entity IDs and topology"
+      },
+      {
+        "name": "storage:entities:read",
+        "comment": "Look up classic dt.entity.* tags (e.g. dt.owner) by id_classic, since Smartscape's own tags field omits custom/manual tags"
+      },
+      {
+        "name": "storage:events:read",
+        "comment": "Read Davis problems (dt.davis.problems) to compute effort metrics like MTTR and problem counts"
+      },
+      {
+        "name": "storage:system:read",
+        "comment": "Read Automation Engine workflow execution events (dt.system.events) to count automations triggered per problem"
+      },
+      {
+        "name": "settings:objects:read",
+        "comment": "Read the native Dynatrace team catalog (builtin:ownership.teams) for the Teams page"
+      },
+      {
+        "name": "settings:objects:write",
+        "comment": "Create, edit, and delete teams in the native Dynatrace team catalog (builtin:ownership.teams)"
+      },
+      {
+        "name": "storage:files:read",
+        "comment": "Read the entity-team overrides lookup file (replaces the old override document) and other lookup-file management features"
+      },
+      {
+        "name": "storage:files:write",
+        "comment": "Create/update the entity-team overrides lookup file (Entities page saves) and the entity-team-assignments export (regenerate-entity-team-assignments function, called hourly by a scheduled workflow)"
+      },
+      {
+        "name": "storage:files:delete",
+        "comment": "Delete lookup files (Grail Resource Store) for future lookup-file management features"
+      },
+      {
+        "name": "automation:workflows:write",
+        "comment": "Create the private, undeployed team-import and sync-ownership-table workflow scaffolds from the Import Teams page"
+      }
+    ]
+  }
+}
