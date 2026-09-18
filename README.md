@@ -12,6 +12,10 @@ Most customers already have their team and ownership structure defined somewhere
 
 **Status:** this is an early/internal prototype, first demoed 2026-09-17. Scope and messaging are still being narrowed based on that feedback (see [Roadmap](#roadmap-known-gaps) below) — it has not yet been decided whether this ships as a customer-facing app or a Hub listing.
 
+## Support
+
+This is a **custom Dynatrace App**, not an official Dynatrace product feature. It is **not covered by official Dynatrace Support** — there's no SLA, and Dynatrace Support will not troubleshoot it. Issues, questions, or requests should go to the app's author/maintainer (see repo contributors) rather than a support ticket.
+
 ## What it does
 
 - **Overview** — top-line metrics: problems in the selected time range, unassigned problems, and how many teams are tracked.
